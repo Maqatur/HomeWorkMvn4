@@ -6,7 +6,7 @@ public class MonthlySalesService {
 
         int amount = 0;
         for (long monthRevenue : sales) {
-            amount += (int)monthRevenue;
+            amount += monthRevenue;
         }
         return amount;
     }
