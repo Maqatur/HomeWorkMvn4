@@ -2,22 +2,22 @@ package ru.netology.stats.service;
 
 public class MonthlySalesService {
 
-    public int SummarySales(int[] sales) {
+    public int summarySales(long[] sales) {
 
-        int sum = 0;
-        for (int i : sales) {
-            sum += i;
+        int amount = 0;
+        for (long monthRevenue : sales) {
+            amount += (int)monthRevenue;
         }
-        return sum;
+        return amount;
     }
 
-    public int AverageAmount(int[] sales) {
+    public int averageAmount(long[] sales) {
 
-        int sum2 = SummarySales(sales) / sales.length;
-        return sum2;
+        int averageMonthly = summarySales(sales) / sales.length;
+        return averageMonthly;
     }
 
-    public int MaxSales(int[] sales) {
+    public int maxSales(long[] sales) {
         int maxMonth = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] >= sales[maxMonth]) {
@@ -27,7 +27,7 @@ public class MonthlySalesService {
         return maxMonth + 1;
     }
 
-    public int minSales(int[] sales) {
+    public int minSales(long[] sales) {
         int minMonth = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] <= sales[minMonth]) {
@@ -37,26 +37,26 @@ public class MonthlySalesService {
         return minMonth + 1;
     }
 
-    public int CalcLowMonth(int[] sales) {
+    public int calcLowMonth(long[] sales) {
         int lowMonth = 0;
+        int averageValue = averageAmount(sales);
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < AverageAmount(sales)) {
+            if (sales[i] < averageValue) {
                 lowMonth++;
             }
         }
         return lowMonth;
-
     }
 
-    public int CalcHighMonth(int[] sales) {
+    public int calcHighMonth(long[] sales) {
         int highMonth = 0;
+        int averageValue = averageAmount(sales);
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > AverageAmount(sales)) {
+            if (sales[i] > averageValue) {
                 highMonth++;
             }
         }
         return highMonth;
-
     }
 
 }
