@@ -37,8 +37,8 @@ public class MonthlySalesService {
         return minMonth + 1;
     }
 
-    public long calcLowMonth(long[] sales) {
-        long lowMonth = 0;
+    public int calcLowMonth(long[] sales) {
+        int lowMonth = 0;
         long averageValue = averageAmount(sales);
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < averageValue) {
@@ -48,8 +48,8 @@ public class MonthlySalesService {
         return lowMonth;
     }
 
-    public long calcHighMonth(long[] sales) {
-        long highMonth = 0;
+    public int calcHighMonth(long[] sales) {
+        int highMonth = 0;
         long averageValue = averageAmount(sales);
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > averageValue) {

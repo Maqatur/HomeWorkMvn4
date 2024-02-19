@@ -45,8 +45,8 @@ public class MonthlySalesServiceTest {
     public void TestLowSales() {
         MonthlySalesService service = new MonthlySalesService();
         long[] sales = {440_000, 352_000, 856_120, 297_340, 462_310, 58_700, 332_890, 764_100, 963_150, 852_340, 963_000, 498_000};
-        long expected = 7;
-        long actual = service.calcLowMonth(sales);
+        int expected = 7;
+        int actual = service.calcLowMonth(sales);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -54,8 +54,8 @@ public class MonthlySalesServiceTest {
     public void TestHighSales() {
         MonthlySalesService service = new MonthlySalesService();
         long[] sales = {440_000, 352_000, 856_120, 297_340, 462_310, 58_700, 332_890, 764_100, 963_150, 852_340, 963_000, 498_000};
-        long expected = 5;
-        long actual = service.calcHighMonth(sales);
+        int expected = 5;
+        int actual = service.calcHighMonth(sales);
         Assertions.assertEquals(expected, actual);
     }
 

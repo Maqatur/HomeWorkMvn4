@@ -19,10 +19,10 @@ public class main {
         int minMonth = service.minSales(sales);
         System.out.println("Месяц минимальных продаж: " + minMonth);
 
-        long lowMonth = service.calcLowMonth(sales);
+        int lowMonth = service.calcLowMonth(sales);
         System.out.println("Количество месяцев низких продаж: " + lowMonth);
 
-        long highMonth = service.calcHighMonth(sales);
+        int highMonth = service.calcHighMonth(sales);
         System.out.println("Количество месяцев высоких продаж: " + highMonth);
 
     }
