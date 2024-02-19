@@ -10,7 +10,7 @@ public class main {
         long annualRevenue = service.summarySales(sales);
         System.out.println("Годовая выручка составляет: " + annualRevenue);
 
-        int averageMonthly = service.averageAmount(sales);
+        long averageMonthly = service.averageAmount(sales);
         System.out.println("Среднемесячная выручка составляет: " + averageMonthly);
 
         int maxMonth = service.maxSales(sales);
@@ -19,10 +19,10 @@ public class main {
         int minMonth = service.minSales(sales);
         System.out.println("Месяц минимальных продаж: " + minMonth);
 
-        int lowMonth = service.calcLowMonth(sales);
+        long lowMonth = service.calcLowMonth(sales);
         System.out.println("Количество месяцев низких продаж: " + lowMonth);
 
-        int highMonth = service.calcHighMonth(sales);
+        long highMonth = service.calcHighMonth(sales);
         System.out.println("Количество месяцев высоких продаж: " + highMonth);
 
     }
